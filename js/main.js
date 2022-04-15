@@ -13,7 +13,10 @@
  document.getElementById("btn-send-ngayluong").onclick = function () {
    var soNgayLam = parseFloat(document.getElementById("soNgayLam").value);
    var luong = luong1Ngay * soNgayLam;
-   document.getElementById("ket-qua-luong").innerHTML = "Lương là: " + luong;
+
+  var currentFormat = new Intl.NumberFormat("vn-VN");
+
+   document.getElementById("ket-qua-luong").innerHTML = "Lương là: " + currentFormat.format(luong);
  }
  
  
@@ -59,7 +62,10 @@
  document.getElementById("btn-send-sotien").onclick = function () {
   var soTienUSD = parseFloat(document.getElementById("soTienUSD").value);
   var soTienVND = soTienUSD * tiGia;
-  document.getElementById("ket-qua-sotien").innerHTML = "Số tiền sau khi quy đổi là: " + soTienVND;
+
+  var currentFormat = new Intl.NumberFormat("vn-VN");
+
+  document.getElementById("ket-qua-sotien").innerHTML = "Số tiền sau khi quy đổi là: " + currentFormat.format(soTienVND);
 }
 
  
